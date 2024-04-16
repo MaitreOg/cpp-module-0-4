@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/13 17:28:43 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/13 20:10:53 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-#include "Contact.hpp"
+#include <iostream>
+#include <string>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class   PhoneBook{
 
-private:  
-	contact repertoire[8];
-	int     i;
 
+
+class   DiamondTrap : public ScavTrap, public FragTrap
+{
+private:
+    std::string name;
 public:
-	void    set_contact(int i);
-	void    get_contact(void);
+    DiamondTrap(const std::string&);
+    ~DiamondTrap(void);
+    DiamondTrap(DiamondTrap &);
+    DiamondTrap &operator=(DiamondTrap &src);
+    void WhoAmI(void);
 
-	PhoneBook(void);
 };
 
 #endif

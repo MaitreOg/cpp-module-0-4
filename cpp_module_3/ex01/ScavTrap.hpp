@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/13 01:01:19 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/13 17:59:30 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include "Contact.hpp"
+#include <iostream>
+#include "ClapTrap.hpp"
 
-class   PhoneBook{
 
-private:  
-	contact repertoire[8];
-	int     i;
+
+class   ScavTrap : public ClapTrap 
+{
+private:
 
 public:
-	void    set_contact(int i);
-	void    get_contact(void);
+    ScavTrap(const std::string&);
+    ~ScavTrap(void);
+    ScavTrap(ScavTrap &);
+    ScavTrap &operator=(ScavTrap &src);
+    void guardGate();
 
-	PhoneBook(void);
 };
 
 #endif

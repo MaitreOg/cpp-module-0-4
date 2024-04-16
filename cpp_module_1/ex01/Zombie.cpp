@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/08 01:54:01 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/08 19:46:54 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-#include "Contact.hpp"
+Zombie::Zombie(void)
+{
+    this->name = "name";
+}
+void    Zombie::announce(void)
+{
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ...." << std::endl;
+}
 
-class   PhoneBook{
-
-private:  
-	contact repertoire[8];
-	int     i;
-
-public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
-};
-
-#endif
+Zombie::~Zombie (void)
+{
+    std::cout << this->name << " is dead" << std::endl;
+}

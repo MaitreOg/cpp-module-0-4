@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/10 19:18:06 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/10 19:25:25 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
-#include "Contact.hpp"
+#include <string>
+#include <iostream>
 
-class   PhoneBook{
 
-private:  
-	contact repertoire[8];
-	int     i;
+class   Harl{
+
+private:
+
+    void    debug(void);
+    void    info(void);
+    void    warning(void);
+    void    error(void);
 
 public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
+    void    complain(std::string level);
+    Harl(void);
+    ~Harl(void);
 };
 
 #endif

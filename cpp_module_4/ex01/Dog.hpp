@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/13 22:21:11 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/16 20:34:37 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include "Contact.hpp"
+#include <iostream>
+#include "Animal.hpp"
 
-class   PhoneBook{
+class Brain;
 
-private:  
-	contact repertoire[8];
-	int     i;
-
+class   Dog :  virtual public Animal 
+{
+private:
+    Brain* brain;
 public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
+    Dog();
+    ~Dog(void);
+    Dog(Dog &);
+    Dog &operator=(Dog &src);
 };
 
 #endif

@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/13 00:59:41 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/13 18:01:26 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "ScavTrap.hpp"
 
-#include "Contact.hpp"
+int main()
+{
+    std::string s = "sam";
+    ScavTrap player1(s);
+    ScavTrap player2(player1);
+    player1.guardGate();
+    player1.attack("bob");
+    player1.takeDamage(13);
 
-class   PhoneBook{
-
-private:  
-	contact repertoire[8];
-	int     i;
-
-public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
-};
-
-#endif
+    return (0);
+}

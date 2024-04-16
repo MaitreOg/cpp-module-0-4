@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/13 16:56:23 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/16 20:43:54 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-#include "Contact.hpp"
+#include <iostream>
+#include "ClapTrap.hpp"
 
-class   PhoneBook{
 
-private:  
-	contact repertoire[8];
-	int     i;
+
+class   FragTrap : virtual public ClapTrap 
+{
+private:
 
 public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
+    FragTrap(const std::string&);
+    FragTrap();
+    ~FragTrap(void);
+    FragTrap(FragTrap &);
+    FragTrap &operator=(FragTrap &src);
+    void highFivesGuys(void);
 };
 
 #endif

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/09 19:06:06 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/09 20:24:32 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "fileTransfer.hpp"
 
-#include "Contact.hpp"
-
-class   PhoneBook{
-
-private:  
-	contact repertoire[8];
-	int     i;
-
-public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
-};
-
-#endif
+int main(int ac, char **av)
+{
+    if (ac != 4)
+    {
+        std::cerr << "pls enter valid argument: ./executable filename s1 s2" << std::endl;
+    }
+    std::string file = av[1];
+    std::string add = ".replace";
+    std::string file2;
+    file2.append(file);
+    file2.append(add);
+    transfert_file(file, file2, av[2], av[3]);
+    return (0);
+}

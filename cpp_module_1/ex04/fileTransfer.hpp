@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   fileTransfer.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/09 19:08:07 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/09 20:23:51 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-#include "Contact.hpp"
+#include <string>
+#include <fstream>
+#include <iostream>
 
-class   PhoneBook{
 
-private:  
-	contact repertoire[8];
-	int     i;
+int transfert_file(std:: string filename, std::string filename2, std::string s1, std::string s2);
 
-public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
-};
 
 #endif

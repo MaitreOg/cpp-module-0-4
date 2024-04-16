@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/16 19:37:15 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/16 19:43:15 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "Contact.hpp"
+#include <iostream>
+#include "WrongAnimal.hpp"
 
-class   PhoneBook{
 
-private:  
-	contact repertoire[8];
-	int     i;
+
+class   WrongCat :  public WrongAnimal 
+{
+private:
 
 public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
+    WrongCat(const std::string&);
+    WrongCat();
+    ~WrongCat(void);
+    WrongCat(WrongCat &);
+    WrongCat &operator=(WrongCat &src);
 };
 
 #endif

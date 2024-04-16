@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/13 22:21:01 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/13 22:25:15 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include "Contact.hpp"
+#include <iostream>
+#include "Animal.hpp"
 
-class   PhoneBook{
 
-private:  
-	contact repertoire[8];
-	int     i;
+
+class   Cat :  public Animal 
+{
+private:
 
 public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
+    Cat(const std::string&);
+    Cat();
+    ~Cat(void);
+    Cat(Cat &);
+    Cat &operator=(Cat &src);
 };
 
 #endif

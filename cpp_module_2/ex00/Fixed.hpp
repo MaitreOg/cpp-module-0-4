@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/10 19:52:54 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/10 23:02:03 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-#include "Contact.hpp"
+#include <iostream>
 
-class   PhoneBook{
 
-private:  
-	contact repertoire[8];
-	int     i;
+class   Fixed{
 
+private:
+    int nb;
+    static const int bit_fract = 8;
 public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
+    Fixed(void);
+    ~Fixed(void);
+    Fixed(const Fixed &);
+    Fixed &operator=(const Fixed &);
+    int getRawBits( void ) const;
+    void setRawBits( int const raw );
 };
 
 #endif

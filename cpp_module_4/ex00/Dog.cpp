@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/13 22:19:07 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/16 19:32:25 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "Dog.hpp"
 
-#include "Contact.hpp"
+Dog::Dog() : Animal("Dog")
+{
+    std::cout << "Dog default constructor called" << std::endl;
 
-class   PhoneBook{
+}
+Dog::~Dog(void)
+{
+    std::cout << "Dog destructor called" << std::endl;
 
-private:  
-	contact repertoire[8];
-	int     i;
+}
+Dog::Dog(Dog &src): Animal("Dog")
+{
+    std::cout << "Dog copy constructor called" << std::endl;
 
-public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
-};
-
-#endif
+}
+Dog &Dog::operator=(Dog &src)
+{
+    std::cout << "Dog affectation operator called" << std::endl;
+    return src;
+}

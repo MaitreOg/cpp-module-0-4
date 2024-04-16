@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 02:48:35 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 19:24:40 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/16 19:53:52 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/16 20:38:16 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "Contact.hpp"
+#include <iostream>
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-class   PhoneBook{
 
-private:  
-	contact repertoire[8];
-	int     i;
 
+class   Brain :  public Cat, public Dog 
+{
+private:
+    std::string *tab;
 public:
-	void    set_contact(int i);
-	void    get_contact(void);
-
-	PhoneBook(void);
+    Brain(Brain &);
+    Brain();
+    ~Brain(void);
+    Brain &operator=(Brain &src);
 };
 
 #endif
