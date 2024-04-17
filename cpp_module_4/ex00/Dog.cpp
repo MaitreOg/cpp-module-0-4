@@ -25,7 +25,7 @@ Dog::~Dog(void)
 Dog::Dog(Dog &src): Animal("Dog")
 {
     std::cout << "Dog copy constructor called" << std::endl;
-
+    *this = src;
 }
 Dog &Dog::operator=(Dog &src)
 {

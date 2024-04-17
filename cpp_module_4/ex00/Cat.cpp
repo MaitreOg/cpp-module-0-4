@@ -25,7 +25,7 @@ Cat::~Cat(void)
 Cat::Cat(Cat &src): Animal("Cat")
 {
     std::cout << "Cat copy constructor called" << std::endl;
-
+    *this = src;
 }
 Cat &Cat::operator=(Cat &src)
 {
