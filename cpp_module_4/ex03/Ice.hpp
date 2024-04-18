@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 22:20:48 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/18 18:59:24 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/18 13:52:55 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/18 20:00:34 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include <iostream>
+#include "AMateria.hpp"
+#include "Character.hpp"
 
-
-
-class   AAnimal
+class Ice : public AMateria
 {
 private:
     std::string type;
-    AAnimal(AAnimal&);
-    AAnimal &operator=(AAnimal &src);
 public:
-    AAnimal(const std::string&);
-    AAnimal();
-    virtual ~AAnimal(void);
-
-    virtual void makeSound(void) const = 0;
-    std::string getType(void) const;
+    Ice();
+    Ice(Ice &);
+    Ice &operator=(Ice &src);
+    ~Ice();
+    AMateria* clone() const;
+    void use(ICharacter& target);
 };
 
 #endif

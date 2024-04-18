@@ -5,35 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 13:31:32 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/18 13:31:38 by smarty           ###   ########.fr       */
+/*   Created: 2024/04/18 13:31:17 by smarty            #+#    #+#             */
+/*   Updated: 2024/04/18 18:51:05 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
+
+
 
 int main()
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    IMateriaSource* src = new MateriaSource();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
     
-    delete j;//should not create a leak
-    delete i;
+    ICharacter* me = new Character("me");
     
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << std::endl;
-
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
     
-    const Animal* array[10];
-    for (int i = 0; i < 5; i++)
-        array[i] = new Dog();
-    for (int i = 5; i < 10; i++)
-        array[i] = new Cat();
-    for (int i = 0; i < 10; i++)
-        delete array[i];
+    ICharacter* bob = new Character("bob");
     
+    me->use(0, *bob);
+    me->use(1, *bob);
     
+    delete bob;
+    delete me;
+    delete src;
     return 0;
 }
