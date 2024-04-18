@@ -12,11 +12,11 @@
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
 
 }
-Cure::Cure(Cure &src)  : AMateria("Cure")
+Cure::Cure(Cure &src)  : AMateria("cure")
 {
 
 }

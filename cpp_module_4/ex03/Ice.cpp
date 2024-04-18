@@ -12,11 +12,11 @@
 
 #include "Ice.hpp"
 
-Ice::Ice()  : AMateria("Ice")
+Ice::Ice()  : AMateria("ice")
 {
 
 }
-Ice::Ice(Ice &src)  : AMateria("Ice")
+Ice::Ice(Ice &src)  : AMateria("ice")
 {
 
 }

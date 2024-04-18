@@ -59,11 +59,10 @@ void MateriaSource::learnMateria(AMateria* materia)
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
     int i = 0;
-    
-    while (this->inv[i]->getType() != type)
+    while (this->inv[i]->getType() != type && i < 4)
         i++;
     if (this->inv[i]->getType() == type)
-        return  (inv[i]);
+        return  (this->inv[i]->clone());
     return (0);
 }
 
