@@ -16,9 +16,10 @@ int main()
 {
     std::string s = "sam";
     DiamondTrap player1(s);
+    DiamondTrap player2("frank");
     player1.WhoAmI();
-    player1.attack("bob");
-    player1.takeDamage(13);
+    player1.attack("frank");
+    player2.takeDamage(30);
 
     return (0);
 }

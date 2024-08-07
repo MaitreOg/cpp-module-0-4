@@ -16,9 +16,10 @@ int main()
 {
     std::string s = "sam";
     FragTrap player1(s);
+    FragTrap player2("frank");
     player1.highFivesGuys();
-    player1.attack("bob");
-    player1.takeDamage(13);
+    player1.attack("frank");
+    player2.takeDamage(30);
 
     return (0);
 }

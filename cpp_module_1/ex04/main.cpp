@@ -17,6 +17,7 @@ int main(int ac, char **av)
     if (ac != 4)
     {
         std::cerr << "pls enter valid argument: ./executable filename s1 s2" << std::endl;
+        return (0);
     }
     std::string file = av[1];
     std::string add = ".replace";

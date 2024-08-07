@@ -16,10 +16,10 @@ int main()
 {
     std::string s = "sam";
     ScavTrap player1(s);
-    ScavTrap player2(player1);
+    ScavTrap player2("frank");
     player1.guardGate();
-    player1.attack("bob");
-    player1.takeDamage(13);
+    player1.attack("frank");
+    player2.takeDamage(20);
 
     return (0);
 }
