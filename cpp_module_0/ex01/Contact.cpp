@@ -6,7 +6,7 @@
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 01:20:21 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/06 20:36:27 by smarty           ###   ########.fr       */
+/*   Updated: 2024/08/10 15:28:19 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	contact::set_secret(std::string secret)
 	this->darkset_secret = secret;
 }
 
-void	contact::set_phone_number(long pn)
+void	contact::set_phone_number(std::string phone_number)
 {
-	this->phone_number = pn;
+	this->phone_number = phone_number;
 }
 
 std::string	contact::get_first_name(void)
@@ -57,7 +57,7 @@ std::string	contact::get_secret(void)
 	return (this->darkset_secret);
 }
 
-long	contact::get_phone_number(void)
+std::string	contact::get_phone_number(void)
 {
 	return (this->phone_number);
 }

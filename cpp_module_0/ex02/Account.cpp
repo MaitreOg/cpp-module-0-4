@@ -6,7 +6,7 @@
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 21:15:11 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/07 00:45:14 by smarty           ###   ########.fr       */
+/*   Updated: 2024/08/10 16:12:37 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ Account::Account( int initial_deposit )
 
 Account::~Account( void )
 {
-	this->_amount = 0;
 	this->_displayTimestamp();
 	std::cout << " index:" << this->_accountIndex << ";amount:" << this->_amount << ";closed" << std::endl;
 
@@ -77,7 +76,7 @@ Account::~Account( void )
 void	Account::makeDeposit( int deposit )
 {
 	this->_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex << "p_amount:" << this->_amount << ";deposit:" << deposit << ";amount:" << (this->_amount + deposit) << ";nb_deposits:" << (this->_nbDeposits + 1) << std::endl;
+	std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->_amount << ";deposit:" << deposit << ";amount:" << (this->_amount + deposit) << ";nb_deposits:" << (this->_nbDeposits + 1) << std::endl;
 	this->_amount += deposit;
 	this->_totalAmount += deposit;
 	this->_nbDeposits++;
@@ -89,7 +88,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	if (this->_amount - withdrawal >= 0)
 	{
 		this->_displayTimestamp();
-		std::cout << " index:" << this->_accountIndex << "p_amount:" << this->_amount << ";withdrawal:" << withdrawal << ";amount:" << (this->_amount - withdrawal) << ";nb_withdrawal:" << (this->_nbWithdrawals + 1) << std::endl;
+		std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->_amount << ";withdrawal:" << withdrawal << ";amount:" << (this->_amount - withdrawal) << ";nb_withdrawal:" << (this->_nbWithdrawals + 1) << std::endl;
 
 		this->_amount -= withdrawal;
 		this->_totalAmount -= withdrawal;
@@ -100,7 +99,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	else
 	{
 		this->_displayTimestamp();
-		std::cout << " index:" << this->_accountIndex << "p_amount:" << this->_amount << ";withdrawal:" << "refused" << std::endl;
+		std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->_amount << ";withdrawal:" << "refused" << std::endl;
 		return (0);
 	}
 }

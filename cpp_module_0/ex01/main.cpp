@@ -6,7 +6,7 @@
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 00:32:59 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/06 20:36:41 by smarty           ###   ########.fr       */
+/*   Updated: 2024/08/10 16:07:35 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main()
 	while(1)
 	{
 		std::cout << "ADD | SEARCH | EXIT" << std::endl << std::endl;
-    	std::cin >> line;
+    	std::getline(std::cin, line);
 		std::cout << std::endl;
 
 		if (line == "add" || line == "ADD")
