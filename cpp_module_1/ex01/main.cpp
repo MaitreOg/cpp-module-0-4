@@ -24,7 +24,7 @@ int main()
     std::getline(std::cin, number);
     while (number[i])
         i++;
-    if (i > 9 && number[0] >= 2)
+    if ((i > 9 && number[0] >= 2) || i > 10)
         return (0);
     N = std::stoi(number);
     std::cout << "zombie name : ";
