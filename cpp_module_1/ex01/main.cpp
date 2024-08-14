@@ -6,7 +6,7 @@
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 01:53:33 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/08 02:14:02 by smarty           ###   ########.fr       */
+/*   Updated: 2024/08/13 19:39:55 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,18 @@ int main()
     std::string number;
     std::string name;
     int N;
+    int i = 0;
     Zombie* zombie;
 
-    std::cout << "zombie count :";
-    std::cin >> number;
+    std::cout << "zombie count : ";
+    std::getline(std::cin, number);
+    while (number[i])
+        i++;
+    if (i > 9 && number[0] >= 2)
+        return (0);
     N = std::stoi(number);
-    std::cout << "zombie name:";
-    std::cin >> name;
+    std::cout << "zombie name : ";
+    std::getline(std::cin, name);
     zombie = zombieHorde(N, name);
     delete []zombie;
 }

@@ -6,7 +6,7 @@
 /*   By: smarty <smarty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:14:50 by smarty            #+#    #+#             */
-/*   Updated: 2024/04/08 01:56:40 by smarty           ###   ########.fr       */
+/*   Updated: 2024/08/14 17:54:42 by smarty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main()
     Zombie*     Zombie_heap;
  
     std::cout << "zombie 1 name: ";
-    std::cin >> name1;
+    std::getline(std::cin, name1);
     std::cout << "zombie 2 name: ";
-    std::cin >> name2;
+    std::getline(std::cin, name2);
     Zombie_heap = newZombie(name1);
     Zombie_heap->announce();
     randomChump(name2);
